@@ -51,7 +51,7 @@ export default function Page() {
     <div className='container max-w-screen-xl pt-4'>
       <header className='flex items-center justify-between'>
         <div className='flex items-center gap-2'>
-          <img src='/logo.svg' className='size-10' />
+          <img src={`/${config.settings.logo || 'logo.svg'}`} className='size-10' />
           <h1 className='text-3xl'>{config.settings.title}</h1>
         </div>
         <div>
@@ -101,19 +101,10 @@ export default function Page() {
           {' '}
           &
           {' '}
-          <a href='https://vike.dev/' target='_blank' rel='noreferrer'>
-            Vike
+          <a href='https://twitter.com/Biast12/' target='_blank' rel='noreferrer'>
+            Biast12
           </a>
         </span>
-        <a
-          href='https://github.com/yunsii/cf-worker-status-page-pro'
-          target='_blank'
-          rel='noreferrer'
-          className='flex items-center gap-1'
-        >
-          <span className='i-ic--outline-star size-4 animate-bounce' />
-          Get your status page
-        </a>
       </footer>
     </div>
   )

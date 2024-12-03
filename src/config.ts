@@ -2,10 +2,11 @@ import type { Config } from './types'
 
 export const config: Config = {
   settings: {
-    title: 'The Archive Status Page',
+    title: 'The Archive - Status Page',
     url: 'https://status.biast12.site',
     displayDays: 30,
     collectResponseTimes: true,
+    logo: 'archive_logo.svg',
   },
   monitors: [
     {
@@ -36,5 +37,4 @@ export const config: Config = {
       expectStatus: 200,
     },
   ],
-  monitorsCsvUrl: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSnewwW9OuXgtuutyYSfFJ_AZdI-UpkUjP2wWi-zZWM3MKa8IzBceWCe9qB_-Lmk-S7mSFgqKVnokam/pub?gid=0&single=true&output=csv',
 }

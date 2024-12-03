@@ -38,6 +38,12 @@ export interface Settings {
    * If status page exceeded CPU time limit with SSR, you can use CSR instead.
    */
   csr?: boolean
+  /**
+   * Logo name, default: 'logo.svg'
+   * 
+   * Logo will be displayed in the header.
+  */
+  logo?: string
 }
 
 export type FetchHandler = Required<ExportedHandler<Env>>['fetch']

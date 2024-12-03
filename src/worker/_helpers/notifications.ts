@@ -110,7 +110,7 @@ export async function notifyDiscord(monitor: Monitor, options: INotifyDiscordOpt
 
   const payload = {
     username: `${config.settings.title}`,
-    avatar_url: `${config.settings.url}/logo.svg`,
+    avatar_url: `${config.settings.url}/${config.settings.logo || 'logo.svg'}`,
     embeds: [
       {
         title: `${monitorName} is ${getOperationalLabel(data.operational)} [${data.status}|${data.statusText}] ${
