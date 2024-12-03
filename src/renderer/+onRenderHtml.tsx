@@ -31,7 +31,7 @@ export const onRenderHtml: OnRenderHtmlAsync = async (pageContext) => {
       <head>
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
       </head>
-      <body>
+      <body class="dark">
         <div id="page-view">${stream}</div>
       </body>
     </html>

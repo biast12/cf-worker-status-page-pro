@@ -148,13 +148,13 @@ const MonitorPanel: React.FC<IMonitorPanelProps> = (props) => {
           return (
             <li key={item} className={cls`[&:not(:last-child)]:mb-2`}>
               <div className='mb-1 flex items-center gap-2'>
-                <h2 className='text-slate-950'>
+                <h2>
                   {title}
                 </h2>
                 {!!info.length && (
                   <Tooltip>
                     <TooltipTrigger className={cls` size-5 text-slate-500`}>
-                      <span className={cls`i-ic--outline-info size-full`} />
+                      <span className={cls`custom-buttons i-ic--outline-info size-full`} />
                     </TooltipTrigger>
                     <TooltipContent
                       as='ul'
@@ -182,7 +182,7 @@ const MonitorPanel: React.FC<IMonitorPanelProps> = (props) => {
                 && (!monitorConfig.method || monitorConfig.method.toUpperCase() === 'GET')
                 && (
                   <a
-                    className='i-ic--outline-open-in-new size-5 text-slate-500 hover:text-slate-400'
+                    className='custom-buttons i-ic--outline-open-in-new size-5'
                     href={monitorConfig.url}
                     target='_blank'
                     rel='noreferrer'

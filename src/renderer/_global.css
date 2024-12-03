@@ -2,8 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply bg-slate-50;
+/* Default dark mode styles */
+body.dark {
+  @apply bg-neutral-800 text-stone-100;
+
+  select {
+    @apply bg-neutral-800 text-stone-100 border-neutral-400;
+  }
+
+  .custom-buttons {
+    @apply text-stone-100 hover:text-stone-300;
+  }
+}
+/* Light mode styles */
+body.light {
+  @apply bg-slate-50 text-black;
+
+  select {
+    @apply bg-slate-50 text-black border-neutral-800;
+  }
+
+  .custom-buttons {
+    @apply text-stone-600 hover:text-stone-800;
+  }
 }
 
 a {

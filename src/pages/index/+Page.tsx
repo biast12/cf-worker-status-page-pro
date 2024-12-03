@@ -1,4 +1,5 @@
 import { cls } from 'tagged-classnames-free'
+import { useEffect, useRef, useState } from 'react'
 
 import MonitorPanel from './components/MonitorPanel'
 
@@ -8,6 +9,8 @@ import { usePageContext } from '#src/renderer/usePageContext'
 import { config } from '#src/config'
 import { useMounted } from '#src/hooks/mounted'
 
+const themes = ['dark', 'light']
+
 export default function Page() {
   const { data: { allMonitors, kvData, filter } } = usePageContext<IndexPageData>()
   const inputRef = useRef<HTMLInputElement>(null)
@@ -15,6 +18,7 @@ export default function Page() {
   const [searchValue, setSearchValue] = useState(filter || '')
   const deferredSearch = useDeferredValue(searchValue)
   const { mounted } = useMounted()
+  const [theme, setTheme] = useState(themes[0])
 
   useEffect(() => {
     const handler = (event: KeyboardEvent) => {
@@ -43,6 +47,11 @@ export default function Page() {
     }
   }, [deferredSearch])
 
+  useEffect(() => {
+    document.body.classList.remove(...themes)
+    document.body.classList.add(theme)
+  }, [theme])
+
   if (config.settings.csr === true && !mounted) {
     return null
   }
@@ -55,32 +64,17 @@ export default function Page() {
           <h1 className='text-3xl'>{config.settings.title}</h1>
         </div>
         <div>
-          <input
-            ref={inputRef}
-            value={searchValue}
-            onChange={((event) => {
-              setSearchValue(event.target.value)
-            })}
-            onKeyUp={(event) => {
-              if (event.key.toLowerCase() === 'escape') {
-                event.stopPropagation()
-                event.preventDefault()
-                setSearchValue('')
-                inputRef.current?.blur()
-              }
-            }}
-            onFocus={() => {
-              setInputFocused(true)
-            }}
-            onBlur={() => {
-              setInputFocused(false)
-            }}
-            className={cls`
-              h-10 rounded-full border px-4 shadow outline-none
-              transition-all focus:border-cyan-400
-            `}
-            placeholder='Type "/" to search'
-          />
+          <select
+            value={theme}
+            onChange={(e) => setTheme(e.target.value)}
+            className='rounded border p-2'
+          >
+            {themes.map((theme) => (
+              <option key={theme} value={theme}>
+                {theme.charAt(0).toUpperCase() + theme.slice(1)}
+              </option>
+            ))}
+          </select>
         </div>
       </header>
       <main>
