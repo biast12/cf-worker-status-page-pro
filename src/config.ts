@@ -28,10 +28,10 @@ export const config: Config = {
       expectStatus: 200,
     },
     {
-      id: 'cloudflare.com',
+      id: 'www.cloudflare.com',
       name: 'Cloudflare',
-      url: 'https://cloudflare.com',
-      description: 'Cloudflare provides a scalable, easy-to-use, unified control plane to deliver security, performance, and reliability for on-premises, hybrid, cloud, and SaaS applications.',
+      url: 'https://www.cloudflare.com',
+      description: 'Built for anything connected to the Internet.',
       followRedirect: false,
       method: 'GET',
       expectStatus: 200,
