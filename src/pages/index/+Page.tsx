@@ -99,6 +99,14 @@ export default function Page() {
             Biast12
           </a>
         </span>
+        <a
+          href='https://github.com/biast12/cf-worker-status-page-pro'
+          target='_blank'
+          rel='noreferrer'
+          className='flex items-center gap-1'
+        >
+          Source code
+        </a>
       </footer>
     </div>
   )

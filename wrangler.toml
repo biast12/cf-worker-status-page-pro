@@ -18,9 +18,9 @@ kv_namespaces = [ { binding = "KV_STORE", id = "f24d7910903d4d1fb8001920dd6d5a8c
 
 [env.production.triggers]
 crons = [
-  # https://crontab.guru/#*/2_*_*_*_*
+  # https://crontab.guru/#*/5_*_*_*_*
   # Check monitors
-  "*/2 * * * *",
+  "*/5 * * * *",
   # https://crontab.guru/#*/10_*_*_*_*
   # Update remote csv monitors
   "*/10 * * * *",
